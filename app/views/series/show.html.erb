@@ -1,0 +1,18 @@
+<h1><%= @series.title %> Series</h1>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @series.events.order("round asc").each do |event| %>
+    <tr>
+      <td><%= event.id %></td>
+      <td><%= event.title %> <%= @series.title %> - Round <%= event.round %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
